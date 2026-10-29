@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>팜팜 보드게임</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--GAME-->
+<main id="setup" class="setup">
+  <div class="setup-card">
+    <div class="brand">
+      <span class="brand-kicker">내 손 안의 농업</span>
+      <h1>팜팜</h1>
+      <span class="brand-sub">palm farm · The board game</span>
+    </div>
+    <section class="setup-sec">
+      <h2>몇 명(팀)이 할까요?</h2>
+      <div class="segs" id="countSel"></div>
+      <p class="muted small">한 화면에서 차례대로 해요. 2명씩 팀을 이루면 8명까지 함께할 수 있어요.</p>
+    </section>
+    <section class="setup-sec">
+      <h2>이름(팀 이름)</h2>
+      <div class="names" id="nameList"></div>
+      <p class="muted small" id="cashNote"></p>
+    </section>
+    <section class="setup-sec">
+      <h2>시간 제한</h2>
+      <div class="segs" id="timeSel"></div>
+      <p class="muted small">시간이 끝나면 레시피 재료 푸드카드를 가장 많이 모은 사람이 이겨요.</p>
+    </section>
+    <div class="setup-actions">
+      <button class="btn primary big" id="startBtn">게임 시작</button>
+      <button class="btn ghost" id="resumeBtn" hidden>이어하기</button>
+      <button class="btn ghost" id="rulesBtn">게임 방법</button>
+      <button class="btn ghost" data-mute>소리 켜짐</button>
+    </div>
+  </div>
+</main>
+
+<div id="game" class="app" hidden>
+  <div class="board-wrap" id="boardWrap">
+    <img class="board-img" src="assets/board.jpg" alt="팜팜 말판">
+    <div id="squares"></div>
+    <div id="tokens"></div>
+    <div class="stage" id="stage">
+      <div class="stage-who"></div>
+      <div class="stage-msg" id="stageMsg"></div>
+      <div class="stage-row">
+        <div class="dice"><div class="die" id="die1" data-v="1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="die" id="die2" data-v="1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="stage-btns" id="stageBtns"></div>
+      </div>
+    </div>
+    <div id="toasts" class="toasts" aria-live="polite"></div>
+  </div>
+
+  <aside class="panel">
+    <header class="panel-head">
+      <h1>팜팜</h1>
+      <span class="timer" id="timer" hidden></span>
+      <button class="mini" data-mute>소리 켜짐</button>
+      <button class="mini" id="rulesBtn2">게임 방법</button>
+      <button class="mini" id="endBtn">게임 끝내기</button>
+    </header>
+    <div class="bank">
+      <div><small>농업기술센터 기금</small><b id="fundAmt">0원</b></div>
+      <div class="market"><small>직거래장터 매물</small><div id="marketList"></div></div>
+    </div>
+    <ul class="players" id="players"></ul>
+    <h2 class="log-title">진행 기록</h2>
+    <ul class="log" id="log"></ul>
+  </aside>
+</div>
+
+<div id="modalRoot"></div>
+<!--/GAME-->
+<script src="js/data.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
