@@ -9,7 +9,7 @@
 - 효과음은 Kenney의 [Impact Sounds](https://kenney.nl/assets/impact-sounds)(CC0)에서 골라 mp3로 변환했습니다. 화면의 **소리 켜짐/꺼짐** 버튼으로 끌 수 있습니다.
 - 규칙과, 매뉴얼에 없어서 따로 정한 부분은 [RULES.md](RULES.md)에 정리했습니다.
 
-**바로 하기: https://pnoni2080.github.io/plamfarm/**
+**바로 하기: https://pnoni2080.github.io/palmfarm/**
 
 ## 실행 방법
 빌드 과정이 없는 정적 웹페이지입니다.
